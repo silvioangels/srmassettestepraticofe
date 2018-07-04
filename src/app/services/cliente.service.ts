@@ -9,6 +9,6 @@ export class ClienteService {
   constructor(private http: HttpClient) {}
 
   realizarCadastro(cliente: Cliente) {
-    return this.http.post(`${SRM_ASSET_API}/api/clientes`, cliente);
+    return this.http.post('http://localhost:8088/api/clientes', cliente);
   }
 }

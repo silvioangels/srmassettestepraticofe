@@ -3,13 +3,24 @@
     <div class="box-header with-border">
       <h3 class="box-title">SRM Asset Teste Prático Front End</h3>
     </div>
-    <form class="form-horizontal">
+    <form class="form-horizontal" #form="ngForm" (ngSubmit)="realizarCadastro()">
+      
+      <div class="alert alert-error" role="alert" *ngIf="mensagemErro"></div>
+      <div class="alert alert-sucess" role="alert" *ngIf="mensagemSucesso"></div>
+      
       <div class="box-body">
         <div class="form-group">
           <label for="inputNmCliente" class="col-sm-2 control-label">Nome Cliente</label>
 
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputNmCliente" placeholder="Nome Cliente">
+            <input  type="text" 
+                    [(ngModel)]="cliente.nome"
+                    name="nome"
+                    class="form-control" 
+                    id="inputNmCliente"
+                    #nome="ngModel"
+                    placeholder="Nome Cliente"
+                    required>
           </div>
         </div>
         
@@ -17,7 +28,14 @@
             <label for="inputLmtCred" class="col-sm-2 control-label">Limite Credito</label>
   
             <div class="col-sm-10">
-              <input type="number" class="form-control" id="inputLmtCred" placeholder="Limite Credito">
+              <input  type="number"
+                      name="limiteCredito"
+                      [(ngModel)]="cliente.limiteCredito"
+                      class="form-control" 
+                      id="inputLmtCred"
+                      #limiteCredito="ngModel"
+                      placeholder="Limite Credito"
+                      required>
             </div>
         </div>
 
@@ -25,7 +43,12 @@
             <label for="selectRisco" class="col-sm-2 control-label">Risco</label>
   
             <div class="col-sm-10">
-                <select id="selectRisco" class="form-control">
+                <select id="selectRisco" 
+                        name="risco"
+                        [(ngModel)]="cliente.risco"
+                        #risco="ngModel"
+                        class="form-control"
+                        required>
                     <option value="A">A</option>
                     <option value="B">B</option>
                     <option value="C">C</option>

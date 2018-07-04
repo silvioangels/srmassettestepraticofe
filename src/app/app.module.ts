@@ -6,6 +6,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { routes } from './app.routes';
+import { ClienteService } from './services/cliente.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,9 +19,11 @@ import { routes } from './app.routes';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpClientModule,
     routes
   ],
-  providers: [],
+  providers: [ClienteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
