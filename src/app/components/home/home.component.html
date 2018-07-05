@@ -1,7 +1,7 @@
 <div class="col-md-6" style="margin: 0 25%">
   <div class="box box-info">
     <div class="box-header with-border">
-      <h3 class="box-title">SRM Asset Teste Prático Front End</h3>
+      <h3 class="box-title">Teste Prático SRMAsset </h3>
     </div>
     <form class="form-horizontal" #form="ngForm" (ngSubmit)="realizarCadastro()">
       
@@ -29,7 +29,7 @@
         </div>
         
         <div class="form-group">
-            <label for="inputLmtCred" class="col-sm-2 control-label">Limite Credito</label>
+            <label for="inputLmtCred" class="col-sm-2 control-label">Limite Crédito</label>
   
             <div class="col-sm-10">
               <input  type="number"
@@ -79,14 +79,20 @@
       <div class="box-body">
         <table class="table table-bordered">
           <tr>
+              <th>#</th>
             <th>Nome Cliente</th>
-            <th>Limite Credito</th>
+            <th>Limite Crédito (R$)</th>
             <th>Risco</th>
+            <th>Taxa (%)</th>
+            <th>Limite Crédito Calc. (R$)</th>
           </tr>
           <tr *ngFor="let item of listaClientes">
+            <td>{{item.id}}</td>
             <td>{{item.nome}}</td>
             <td>{{item.limiteCredito}}</td>
             <td>{{item.risco}}</td>
+            <td>{{item.txJuros}}</td>
+            <td>{{item.limiteCreditoCalculado}}</td>
           </tr>
           
         </table>
