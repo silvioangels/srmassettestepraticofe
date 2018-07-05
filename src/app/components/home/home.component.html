@@ -5,8 +5,12 @@
     </div>
     <form class="form-horizontal" #form="ngForm" (ngSubmit)="realizarCadastro()">
       
-      <div class="alert alert-error" role="alert" *ngIf="mensagemErro"></div>
-      <div class="alert alert-success" role="alert" *ngIf="mensagemSucesso"></div>
+      <div class="alert alert-error" role="alert" *ngIf="mensagemErro">
+        <strong>{{mensagemErro}}</strong>
+      </div>
+      <div class="alert alert-success" role="alert" *ngIf="mensagemSucesso">
+          <strong>{{mensagemSucesso}}</strong>
+      </div>
       
       <div class="box-body">
         <div class="form-group">
@@ -64,4 +68,30 @@
       
     </form>
   </div>
-</div>  
+</div>
+
+<div class="col-md-6" style="margin: 0 25%">
+    <div class="box">
+      <div class="box-header with-border">
+        <h3 class="box-title">Clientes Cadastrados</h3>
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body">
+        <table class="table table-bordered">
+          <tr>
+            <th>Nome Cliente</th>
+            <th>Limite Credito</th>
+            <th>Risco</th>
+          </tr>
+          <tr *ngFor="let item of listaClientes">
+            <td>{{item.nome}}</td>
+            <td>{{item.limiteCredito}}</td>
+            <td>{{item.risco}}</td>
+          </tr>
+          
+        </table>
+      </div>
+      
+    </div>
+    <!-- /.box -->
+  </div>

@@ -31,20 +31,20 @@ export class HomeComponent implements OnInit {
   realizarCadastro() {
     this.mensagemSucesso = '';
     this.mensagemErro = '';
-    this.cliente.nome = 'silvio';
-    this.cliente.limiteCredito = '1000.00';
-    this.cliente.risco = 'A';
-    this.clienteService.realizarCadastro(this.cliente).subscribe(() => {
+    this.clienteService.realizarCadastro(this.cliente)
+    .subscribe((response: Response) => {
       this.router.navigate(['/']);
       this.mensagemSucesso = 'Cadastro realizado com sucesso';
+      this.buscarClientes();
     }, err => {
-      this.mensagemErro = 'Ocorreu um erro ao realizar o cadastro';
+      this.mensagemErro = err.error.errors[0];
     });
   }
 
   buscarClientes() {
 
-    this.clienteService.buscarTodosClientes().subscribe((response: Response) => {
+    this.clienteService.buscarTodosClientes()
+    .subscribe((response: Response) => {
       this.listaClientes = response.data;
       this.router.navigate(['/']);
     }, err => {
