@@ -2,6 +2,18 @@
 
 Parte Front End da solicitação do teste pratico da SRMAsset
 
+## Tecnologias Utilizadas
+
+-> Html
+
+-> Css
+
+-> Javascript 
+
+-> Nodejs 
+
+-> Angular
+
 ## Angular CLI
 
 Esse projeto foi gerado com  [Angular CLI](https://github.com/angular/angular-cli) versão 6.0.7.
