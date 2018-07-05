@@ -1,8 +1,12 @@
 export class Cliente {
 
+    nome: string;
+    limiteCredito: string;
+    risco: string;
+
     constructor(
         nome: string,
-        limiteCredito: Number,
+        limiteCredito: string,
         risco: string
     ) {}
 

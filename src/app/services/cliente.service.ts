@@ -11,4 +11,8 @@ export class ClienteService {
   realizarCadastro(cliente: Cliente) {
     return this.http.post('http://localhost:8088/api/clientes', cliente);
   }
+
+  buscarTodosClientes() {
+    return this.http.get('http://localhost:8088/api/clientes');
+  }
 }
